@@ -3,6 +3,12 @@
    "description":"A telegram bot to check the Coronavirus in your village",
    "repository":"https://github.com/adrianpaniagualeon/bot-covid-telegram-CYL",
    "logo":"https://images.squarespace-cdn.com/content/v1/595520441e5b6c47143e71aa/1586385106203-2ZV2A0MFL4J1X0WDRZVF/ke17ZwdGBToddI8pDm48kNJm21D9lhyulLAK_VQHscxZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIKxJACMjVVhwS3UYlMCPaXWwOwwASuOOw7sdgJmdSomE/coronavirus.png",
+   "keywords": [
+    "Telegram",
+    "COVID",
+    "Sahagun"
+  ],
+
    "env":{
       "TOKEN":{
          "description":"TELEGRAM BOT TOKEN",
@@ -24,7 +30,6 @@
       "GROUP_ID":{
          "description":"YOUR TELEGRAM GROUP ID",
          "value":"1"
-      },
-
-   }
-}
+      }
+    }
+  }
