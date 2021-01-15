@@ -1,4 +1,4 @@
-# IPTV CHECKER BOT
+# COVID INFO Telegram BOT (CYL)
 
 ## ¿Qué hace este bot?
 Cuando le envias el comando /datos , el bot recopilará y te devolverá los últimos publicados en el portal de datos abiertos de la Junta de Castilla y León
