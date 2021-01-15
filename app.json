@@ -6,24 +6,24 @@
    "env":{
       "TOKEN":{
          "description":"TELEGRAM BOT TOKEN",
-         "value":"************************"
+         "value":"1"
       },
       "WEBHOOK": {
-      "description": "HEROKU APP URL",
-      "value": "https://yourappname.herokuapp.com"
+         "description": "HEROKU APP URL",
+         "value": "https://yourappname.herokuapp.com"
     },
       "PUEBLO":{
-      "description":"ID OF YOUR VILLAGE FROM https://analisis.datosabiertos.jcyl.es/explore/dataset/indicadores-de-riesgo-covid-19-por-municipios/table/?disjunctive.provincia",
-      "value":"Sahag%C3%BAn"
+         "description":"ID OF YOUR VILLAGE FROM https://analisis.datosabiertos.jcyl.es/explore/dataset/indicadores-de-riesgo-covid-19-por-municipios/table/?disjunctive.provincia",
+         "value":"1"
       },
       "ADMIN_ID":{
-      "description":"YOUR CHAT ID",
-      "value":"Sahag%C3%BAn"
+         "description":"YOUR CHAT ID",
+         "value":"1"
       },
 
       "GROUP_ID":{
-      "description":"YOUR TELEGRAM GROUP ID",
-      "value":"Sahag%C3%BAn"
+         "description":"YOUR TELEGRAM GROUP ID",
+         "value":"1"
       },
 
    }
