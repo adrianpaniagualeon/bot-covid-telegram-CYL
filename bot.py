@@ -50,6 +50,8 @@ def confirmacion(message):
 		resp = json.loads(json_str)
 
 		fecha = resp['records'][0]['fields']['fecha']
+		fecha = datetime.strptime(fecha_json, '%Y-%m-%d')
+		fecha = fecha.strftime('%d-%m-%Y')
 
 		ia14 = 	resp['records'][0]['fields']['ia14_boe']
 		ia14_valoracion = 	resp['records'][0]['fields']['ia14_boe_65mas_valoracion']	
@@ -83,7 +85,9 @@ def datos(message):
 	resp = json.loads(json_str)
 
 	fecha = resp['records'][0]['fields']['fecha']
-
+	fecha = datetime.strptime(fecha_json, '%Y-%m-%d')
+	fecha = fecha.strftime('%d-%m-%Y')
+	
 	ia14 = 	resp['records'][0]['fields']['ia14_boe']
 	ia14_valoracion = 	resp['records'][0]['fields']['ia14_boe_65mas_valoracion']	
 	ia7 =resp['records'][0]['fields']['ia7_boe']
