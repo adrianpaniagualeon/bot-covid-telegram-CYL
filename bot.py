@@ -90,7 +90,7 @@ def confirmacion(message):
 		enfermos_14dias = resp['records'][0]['fields']['totalenfermedad_14dias']
 		enfermos_7dias = resp['records'][0]['fields']['totalenfermedad_7dias']
 
-		mensaje_datos = "📅 Ultima actualización de Datos: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\nPCR Realizados el "+fecha+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
+		mensaje_datos = "📅 Ultima actualización de Datos: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\n\nPCR Realizados el "+fecha+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
 		
 	else:
 		bot.send_message(ADMIN_ID, "Los Datos no han sido enviados")
@@ -150,7 +150,7 @@ def datos(message):
 	enfermos_14dias = resp['records'][0]['fields']['totalenfermedad_14dias']
 	enfermos_7dias = resp['records'][0]['fields']['totalenfermedad_7dias']
 
-	mensaje_datos = "📅 Ultima actualización de Datos: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\nPCR Realizados el "+fecha+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
+	mensaje_datos = "📅 Ultima actualización de Datos: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\n\nPCR Realizados el "+fecha+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
 		
 
 	bot.send_message(cid, mensaje_datos)
@@ -159,7 +159,7 @@ def datos(message):
 @bot.message_handler(commands={"start"})
 def start(message):
 	cid = message.chat.id
-	bot.send_message(cid, "Hola. ¿Quieres ver los últimos datos del COVID-19 subidos por la Junta de Castilla y León en Sahagún? Solo tienes que hacer click sobre el siguiente comando: /datos y te los enviaré. Los datos les obtengo del portal de datos abiertos de la Junta de Castilla Y León. El bot ha sido programado por Adrián Paniagua  ")
+	bot.send_message(cid, "Hola. ¿Quieres ver los últimos datos del COVID-19 subidos por la Junta de Castilla y León en Sahagún? Solo tienes que hacer click sobre el siguiente comando: /datos y te los enviaré. Los datos les obtengo del portal de datos abiertos de la Junta de Castilla Y León. El bot ha sido programado por Adrián Paniagua.\n\n Puedes ver el proyecto en Github: https://github.com/adrianpaniagualeon/bot-covid-telegram-CYL")
 
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
