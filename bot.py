@@ -90,7 +90,7 @@ def confirmacion(message):
 		enfermos_14dias = resp['records'][0]['fields']['totalenfermedad_14dias']
 		enfermos_7dias = resp['records'][0]['fields']['totalenfermedad_7dias']
 
-		mensaje_datos = "Datos del Municipio de Sahagún\n📅 Fecha de Datos: "+str(fecha)+"\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\nDatos Zona Básica de Sahagún\nPCR Realizados Hoy\n👉🏻 "+str(pcr_positivos)+"\nPCR Positivos Hoy\n👉🏻 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉🏻 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉🏻 "+str(enfermos_7dias)+"\nPrevalencia\n👉🏻 "+prevalencia
+		mensaje_datos = "Datos del Municipio de Sahagún\n📅 Fecha de Datos: "+str(fecha)+"\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\nDatos Zona Básica de Sahagún\nPCR Realizados Hoy\n👉🏻 "+str(pcr_positivos)+"\nPCR Positivos Hoy\n👉🏻 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉🏻 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉🏻 "+str(enfermos_7dias)+"\nPrevalencia\n👉🏻 "+str(prevalencia)
 		
 	else:
 		bot.send_message(ADMIN_ID, "Los Datos no han sido enviados")
@@ -153,7 +153,7 @@ def datos(message):
 
 
 
-	mensaje_datos = "Datos del Municipio de Sahagún\n📅 Fecha de Datos: "+str(fecha)+"\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\nDatos Zona Básica de Sahagún\nPCR Realizados Hoy\n👉🏻 "+str(pcr_positivos)+"\nPCR Positivos Hoy\n👉🏻 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉🏻 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉🏻 "+str(enfermos_7dias)+"\nPrevalencia\n👉🏻 "+prevalencia
+	mensaje_datos = "Datos del Municipio de Sahagún\n📅 Fecha de Datos: "+str(fecha)+"\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\nDatos Zona Básica de Sahagún\nPCR Realizados Hoy\n👉🏻 "+str(pcr_positivos)+"\nPCR Positivos Hoy\n👉🏻 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉🏻 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉🏻 "+str(enfermos_7dias)+"\nPrevalencia\n👉🏻 "+str(prevalencia)
 	bot.send_message(cid, mensaje_datos)
 
 
