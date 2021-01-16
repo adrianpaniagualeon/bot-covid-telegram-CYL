@@ -85,7 +85,11 @@ def confirmacion(message):
 		json_str = json.dumps(json_file)
 		resp = json.loads(json_str)
 
-		fecha_zona = resp['records'][0]['fields']['fecha']
+		fecha_zona_json = resp['records'][0]['fields']['fecha']
+		fecha_zona = datetime.strptime(fecha_zona_json, '%Y-%m-%d')
+		fecha_zona = fecha_zona.strftime('%d-%m-%Y')
+
+
 		pcr_realizados = 	resp['records'][0]['fields']['pcr_realizados']
 		pcr_positivos  = 	resp['records'][0]['fields']['pcr_positivos']
 		enfermos_14dias = resp['records'][0]['fields']['totalenfermedad_14dias']
@@ -145,7 +149,11 @@ def datos(message):
 	json_file = json.load(f)
 	json_str = json.dumps(json_file)
 	resp = json.loads(json_str)
-	fecha_zona = resp['records'][0]['fields']['fecha']
+	
+	fecha_zona_json = resp['records'][0]['fields']['fecha']
+	fecha_zona = datetime.strptime(fecha_zona_json, '%Y-%m-%d')
+	fecha_zona = fecha_zona.strftime('%d-%m-%Y')
+
 	pcr_realizados = 	resp['records'][0]['fields']['pcr_realizados']
 	pcr_positivos  = 	resp['records'][0]['fields']['pcr_positivos']
 	enfermos_14dias = resp['records'][0]['fields']['totalenfermedad_14dias']
