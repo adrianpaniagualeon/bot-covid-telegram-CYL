@@ -85,12 +85,13 @@ def confirmacion(message):
 		json_str = json.dumps(json_file)
 		resp = json.loads(json_str)
 
+		fecha_zona = resp['records'][0]['fields']['fecha']
 		pcr_realizados = 	resp['records'][0]['fields']['pcr_realizados']
 		pcr_positivos  = 	resp['records'][0]['fields']['pcr_positivos']
 		enfermos_14dias = resp['records'][0]['fields']['totalenfermedad_14dias']
 		enfermos_7dias = resp['records'][0]['fields']['totalenfermedad_7dias']
 
-		mensaje_datos = "📅 Ultima actualización de Datos: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\n\nPCR Realizados el "+fecha+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
+		mensaje_datos = "📅 Ultima actualización de Datos: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\n\nPCR Realizados el "+fecha_zona+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha_zona+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
 		
 	else:
 		bot.send_message(ADMIN_ID, "Los Datos no han sido enviados")
@@ -144,13 +145,13 @@ def datos(message):
 	json_file = json.load(f)
 	json_str = json.dumps(json_file)
 	resp = json.loads(json_str)
-
+	fecha_zona = resp['records'][0]['fields']['fecha']
 	pcr_realizados = 	resp['records'][0]['fields']['pcr_realizados']
 	pcr_positivos  = 	resp['records'][0]['fields']['pcr_positivos']
 	enfermos_14dias = resp['records'][0]['fields']['totalenfermedad_14dias']
 	enfermos_7dias = resp['records'][0]['fields']['totalenfermedad_7dias']
 
-	mensaje_datos = "📅 Ultima actualización de Datos: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\n\nPCR Realizados el "+fecha+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
+	mensaje_datos = "📅 Ultima actualización de Datos: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\n\nPCR Realizados el "+fecha_zona+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha_zona+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
 		
 
 	bot.send_message(cid, mensaje_datos)
