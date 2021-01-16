@@ -107,7 +107,6 @@ def datos(message):
 		yesterday = datetime.now() - timedelta(1)
 		yesterday_1 = str(datetime.strftime(yesterday, '%Y-%m-%d'))
 		yesterday_2 = datetime.strftime(yesterday, '%d-%m-%Y')
-		before
 		url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_65mas_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&facet=casos_ultima_semana&refine.municipio=Sahag%C3%BAn&refine.fecha='+yesterday_1
 
 		respuesta = requests.get(url)
@@ -137,7 +136,7 @@ def datos(message):
 		beforeyesterday = datetime.now() - timedelta(2)
 		beforeyesterday_1 = str(datetime.strftime(beforeyesterday, '%Y-%m-%d'))
 		beforeyesterday_2 = datetime.strftime(beforeyesterday, '%d-%m-%Y')
-		before
+		
 		url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_65mas_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&facet=casos_ultima_semana&refine.municipio=Sahag%C3%BAn&refine.fecha='+beforeyesterday_1
 
 		respuesta = requests.get(url)
