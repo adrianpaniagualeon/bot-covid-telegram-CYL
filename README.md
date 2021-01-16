@@ -10,7 +10,7 @@ Existen dos formas de colaborar:
 - Aportación económica: Puedes aportar tu granito de arena por [Paypal](https://paypal.me/panleoad)
 
 ## ¿Puedo utilizar el código para crear otro bot?
-Sí, siempre que cumplas la [LICENCIA MIT](https://github.com/adrianpaniagualeon/iptv-checker/blob/main/LICENSE).
+Sí, siempre que cumplas la [LICENCIA MIT](https://github.com/adrianpaniagualeon/bot-covid-telegram-CYL/blob/main/LICENSE).
 
 Si vas a usarlo en Heroku, te lo ponemos un poco más facil. Solo tienes que hacer click en el siguiente botón
 
