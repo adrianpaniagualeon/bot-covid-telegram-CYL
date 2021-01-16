@@ -66,10 +66,10 @@ def confirmacion(message):
 
 			mensaje_datos = "Datos del Municipio de Sahagún\n📅 Fecha de Datos: "+str(yesterday_2)+"\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")"
 		except:
-			before_yesterday = datetime.now() - timedelta(2)
-			before_yesterday_1 = str(datetime.strftime(before_yesterday, '%Y-%m-%d'))
-			before_yesterday_2 = datetime.strftime(before_yesterday, '%d-%m-%Y')
-			url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_65mas_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&facet=casos_ultima_semana&refine.municipio='+PUEBLO+'&refine.fecha='+before_yesterday_1
+			beforeyesterday = datetime.now() - timedelta(2)
+			beforeyesterday_1 = str(datetime.strftime(beforeyesterday, '%Y-%m-%d'))
+			beforeyesterday_2 = datetime.strftime(beforeyesterday, '%d-%m-%Y')
+			url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_65mas_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&facet=casos_ultima_semana&refine.municipio='+PUEBLO+'&refine.fecha='+beforeyesterday_1
 
 
 			respuesta = requests.get(url)
@@ -91,7 +91,7 @@ def confirmacion(message):
 			trazabilidad_valoracion = resp['records'][0]['fields']['porc_trazabilidad_valoracion']
 
 
-			mensaje_datos = "Datos del Municipio de Sahagún\n📅 Fecha de Datos: "+str(before_yesterday_2)+"\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")"
+			mensaje_datos = "Datos del Municipio de Sahagún\n📅 Fecha de Datos: "+str(beforeyesterday_2)+"\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")"
 
 		bot.send_message(GROUP_ID, mensaje_datos)
 	else:
@@ -134,11 +134,11 @@ def datos(message):
 		mensaje = message.text
 		cid = message.chat.id
 
-		before_yesterday = datetime.now() - timedelta(2)
-		before_yesterday_1 = str(datetime.strftime(before_yesterday, '%Y-%m-%d'))
-		before_yesterday_2 = datetime.strftime(before_yesterday, '%d-%m-%Y')
+		beforeyesterday = datetime.now() - timedelta(2)
+		beforeyesterday_1 = str(datetime.strftime(beforeyesterday, '%Y-%m-%d'))
+		beforeyesterday_2 = datetime.strftime(beforeyesterday, '%d-%m-%Y')
 		before
-		url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_65mas_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&facet=casos_ultima_semana&refine.municipio=Sahag%C3%BAn&refine.fecha='+before_yesterday_1
+		url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_65mas_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&facet=casos_ultima_semana&refine.municipio=Sahag%C3%BAn&refine.fecha='+beforeyesterday_1
 
 		respuesta = requests.get(url)
 		open('respuesta.json', 'wb').write(respuesta.content)
@@ -159,7 +159,7 @@ def datos(message):
 		trazabilidad_valoracion = resp['records'][0]['fields']['porc_trazabilidad_valoracion']
 
 
-		mensaje_datos = "Datos del Municipio de Sahagún\n📅 Fecha de Datos: "+str(before_yesterday_2)+"\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")"
+		mensaje_datos = "Datos del Municipio de Sahagún\n📅 Fecha de Datos: "+str(beforeyesterday_2)+"\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")"
 
 	bot.send_message(cid, mensaje_datos)
 
