@@ -73,9 +73,6 @@ def datos(message):
 	mensaje = message.text
 	cid = message.chat.id
 
-	yesterday = datetime.now() - timedelta(1)
-	yesterday_1 = str(datetime.strftime(yesterday, '%Y-%m-%d'))
-	fecha = datetime.strftime(yesterday, '%d-%m-%Y')
 	url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&rows=10&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_65mas_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Sahag%C3%BAn'
 
 	respuesta = requests.get(url)
@@ -85,6 +82,7 @@ def datos(message):
 	json_str = json.dumps(json_file)
 	resp = json.loads(json_str)
 
+	fecha = resp['records'][0]['fields']['fecha']
 
 	ia14 = 	resp['records'][0]['fields']['ia14_boe']
 	ia14_valoracion = 	resp['records'][0]['fields']['ia14_boe_65mas_valoracion']	
