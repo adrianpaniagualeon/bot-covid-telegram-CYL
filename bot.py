@@ -24,7 +24,8 @@ server = Flask(__name__)
 @bot.message_handler(commands={"enviocovidgrupo"})
 def enviomensajes(message):
 	cid = message.chat.id
-
+	print (cid)
+	print (ADMIN_ID)
 	if cid == ADMIN_ID:
 		msg = bot.reply_to(message, "¿Esta seguro de que desea enviar los datos del COVID al grupo?")
 		respuesta = types.ForceReply(selective=False)
@@ -32,7 +33,7 @@ def enviomensajes(message):
 		bot.register_next_step_handler(msg, confirmacion)
 		
 	else:
-		bot.send_message(cid, "NO TIENES PERMIS PARA EJECUTAR ESTA ACCIÓN")
+		bot.send_message(cid, "NO TIENES PERMISO PARA EJECUTAR ESTA ACCIÓN")
 
 def confirmacion(message):
 	mensaje = message.text
