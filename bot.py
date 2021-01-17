@@ -21,6 +21,14 @@ PUEBLO = os.environ['PUEBLO']
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
+
+@bot.message_handler(regexp="ayuda")
+def ayuda(message):
+	cid = message.chat.id
+	bot.send_message(cid, "Puedes obtener más ayuda en : https://github.com/adrianpaniagualeon/bot-covid-telegram-CYL")
+
+
+
 @bot.message_handler(commands={"enviocovidgrupo"})
 def enviomensajes(message):
 	cid = message.chat.id
