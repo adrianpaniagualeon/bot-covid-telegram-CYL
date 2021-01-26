@@ -151,6 +151,233 @@ def datos(message):
 	prevalencia = 	resp['records'][0]['fields']['prevalencia']
 
 
+	bercianos = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&sort=fecha&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Bercianos+del+Real+Camino'
+	calzada ='https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&sort=fecha&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Calzada+del+Coto'
+	castrotierra ='https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&sort=fecha&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Castrotierra+de+Valmadrigal'
+	cea = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&sort=fecha&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Cea'
+	escobar = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&sort=fecha&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Escobar+de+Campos'
+	gordaliza = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Gordaliza+del+Pino'
+	grajal = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Grajal+de+Campos'
+	joarilla = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Joarilla+de+las+Matas'
+	sahagun = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&rows=10&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Sahag%C3%BAn'
+	santamaria = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Santa+Mar%C3%ADa+del+Monte+de+Cea'
+	vallecillo ='https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Vallecillo'
+	villamartin ='https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Villamart%C3%ADn+de+Don+Sancho'
+	villamol='https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Villamol'
+	villaselan='https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Villasel%C3%A1n'
+	villazanzo='https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Villazanzo+de+Valderaduey'
+
+
+	PUEBLOS_INCIDENCIA_ALTA = ""
+
+	respuesta = requests.get(bercianos)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	bercianos = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+	respuesta = requests.get(calzada)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	calzada = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+	respuesta = requests.get(castrotierra)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	castrotierra = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(cea)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	cea = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(escobar)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	escobar = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(gordaliza)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	gordaliza = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(grajal)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	grajal = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(joarilla)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	joarilla = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(sahagun)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	sahagun = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(santamaria)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	santamaria = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(vallecillo)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	vallecillo = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(villamartin)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	villamartin = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(villamol)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	villamol = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(villaselan)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	villaselan = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	respuesta = requests.get(villazanzo)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
+
+	villazanzo = resp['records'][0]['fields']['ia7_boe_valoracion']
+
+
+
+	if bercianos == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Bercianos del Real Camino, "
+
+	if calzada == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Calzada del Coto, "
+
+	if castrotierra == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Castrotierra de Valmadrigal, "
+
+	if cea == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Cea, "
+
+	if escobar == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Escobar de Campos, "
+
+	if gordaliza == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Gordaliza del Pino, "
+
+	if grajal == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Grajal de Campos, "
+
+	if joarilla == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Joarilla de las Matas, "
+
+	if sahagun == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Sahagun, "
+
+	if santamaria == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Santa Maria del Monte de Cea, "
+
+	if vallecillo == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Vallecillo, "
+
+	if villamartin == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Villamartin de Don Sancho, "
+
+	if villamol == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Villamol, "
+
+	if villaselan == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "villaselan, "
+
+	if villazanzo == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += "Villazanzo de Valderaduey, "
+
+
 	url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=tasa-enfermos-acumulados-por-areas-de-salud&q=&sort=fecha&facet=fecha&facet=nombregerencia&facet=zbs_geo&facet=tipo_centro&facet=municipio&facet=centro&refine.centro=C.S.+SAHAGUN+CAMPOS'
 	respuesta = requests.get(url)
 	open('respuesta.json', 'wb').write(respuesta.content)
@@ -168,7 +395,7 @@ def datos(message):
 	enfermos_14dias = resp['records'][0]['fields']['totalenfermedad_14dias']
 	enfermos_7dias = resp['records'][0]['fields']['totalenfermedad_7dias']
 
-	mensaje_datos = "📅 Datos correspondientes al dia: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\n\nPCR Realizados el "+fecha_zona+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha_zona+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
+	mensaje_datos = "📅 Datos correspondientes al dia: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\n\nPCR Realizados el "+fecha_zona+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha_zona+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\nPueblos con alta Incidencia\n👉 "+PUEBLOS_INCIDENCIA_ALTA+"\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
 		
 
 	bot.send_message(cid, mensaje_datos)
