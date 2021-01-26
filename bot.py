@@ -357,22 +357,22 @@ def datos(message):
 		PUEBLOS_INCIDENCIA_ALTA += "Joarilla de las Matas, "
 
 	if sahagun == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Sahagun, "
+		PUEBLOS_INCIDENCIA_ALTA += "Sahagún, "
 
 	if santamaria == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Santa Maria del Monte de Cea, "
+		PUEBLOS_INCIDENCIA_ALTA += "Santa María del Monte de Cea, "
 
 	if vallecillo == "Muy alto":
 		PUEBLOS_INCIDENCIA_ALTA += "Vallecillo, "
 
 	if villamartin == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Villamartin de Don Sancho, "
+		PUEBLOS_INCIDENCIA_ALTA += "Villamartín de Don Sancho, "
 
 	if villamol == "Muy alto":
 		PUEBLOS_INCIDENCIA_ALTA += "Villamol, "
 
 	if villaselan == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "villaselan, "
+		PUEBLOS_INCIDENCIA_ALTA += "villaselán, "
 
 	if villazanzo == "Muy alto":
 		PUEBLOS_INCIDENCIA_ALTA += "Villazanzo de Valderaduey, "
