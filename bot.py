@@ -332,50 +332,52 @@ def datos(message):
 
 
 
+
 	if bercianos == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Bercianos del Real Camino, "
+		PUEBLOS_INCIDENCIA_ALTA += "Bercianos del Real Camino"
 
 	if calzada == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Calzada del Coto, "
+		PUEBLOS_INCIDENCIA_ALTA += " Calzada del Coto"
 
 	if castrotierra == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Castrotierra de Valmadrigal, "
+		PUEBLOS_INCIDENCIA_ALTA += " Castrotierra de Valmadrigal"
 
 	if cea == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Cea, "
+		PUEBLOS_INCIDENCIA_ALTA += " Cea"
 
 	if escobar == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Escobar de Campos, "
+		PUEBLOS_INCIDENCIA_ALTA += " Escobar de Campos"
 
 	if gordaliza == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Gordaliza del Pino, "
+		PUEBLOS_INCIDENCIA_ALTA += " Gordaliza del Pino"
 
 	if grajal == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Grajal de Campos, "
+		PUEBLOS_INCIDENCIA_ALTA += " Grajal de Campos"
 
 	if joarilla == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Joarilla de las Matas, "
+		PUEBLOS_INCIDENCIA_ALTA += " Joarilla de las Matas"
 
 	if sahagun == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Sahagún, "
+		PUEBLOS_INCIDENCIA_ALTA += " Sahagún"
 
 	if santamaria == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Santa María del Monte de Cea, "
+		PUEBLOS_INCIDENCIA_ALTA += " Santa María del Monte de Cea, "
 
 	if vallecillo == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Vallecillo, "
+		PUEBLOS_INCIDENCIA_ALTA += " Vallecillo"
 
 	if villamartin == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Villamartín de Don Sancho, "
+		PUEBLOS_INCIDENCIA_ALTA += " Villamartín de Don Sancho"
 
 	if villamol == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Villamol, "
+		PUEBLOS_INCIDENCIA_ALTA += " Villamol"
 
 	if villaselan == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "villaselán, "
+		PUEBLOS_INCIDENCIA_ALTA += " Villaselán"
 
 	if villazanzo == "Muy alto":
-		PUEBLOS_INCIDENCIA_ALTA += "Villazanzo de Valderaduey, "
+		PUEBLOS_INCIDENCIA_ALTA += " Villazanzo de Valderaduey"
+
 
 
 	url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=tasa-enfermos-acumulados-por-areas-de-salud&q=&sort=fecha&facet=fecha&facet=nombregerencia&facet=zbs_geo&facet=tipo_centro&facet=municipio&facet=centro&refine.centro=C.S.+SAHAGUN+CAMPOS'
