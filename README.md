@@ -34,4 +34,4 @@ Si vas a usarlo en Heroku, te lo ponemos un poco más facil. Solo tienes que hac
 ## Me he quedado con alguna duda...
 No te preocupes, la programación puede ser muy complicada. Pasate por el grupo de Telegram e intentaré ayudarte: 
 
-<a href="https://t.me/adrianpaniagua"><img src="https://img.shields.io/badge/Join-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/APLEONI"><img src="https://img.shields.io/badge/Join-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a>
