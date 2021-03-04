@@ -8,10 +8,6 @@ from datetime import datetime, timedelta
 
 TOKEN = os.environ['TOKEN']
 
-ADMIN_ID = os.environ['ADMIN_ID']
-
-GROUP_ID = os.environ['GROUP_ID']
-
 WEBHOOK = os.environ['WEBHOOK']
 
 PUEBLO = os.environ['PUEBLO']
@@ -27,87 +23,6 @@ def ayuda(message):
 	cid = message.chat.id
 	bot.send_message(cid, "Puedes obtener más ayuda en : https://github.com/adrianpaniagualeon/bot-covid-telegram-CYL")
 
-
-
-@bot.message_handler(commands={"enviocovidgrupo"})
-def enviomensajes(message):
-	cid = message.chat.id
-	print (cid)
-	print (ADMIN_ID)
-	if cid == ADMIN_ID:
-		msg = bot.reply_to(message, "¿Esta seguro de que desea enviar los datos del COVID al grupo?")
-		respuesta = types.ForceReply(selective=False)
-		
-		bot.register_next_step_handler(msg, confirmacion)
-		
-	else:
-		bot.send_message(cid, "NO TIENES PERMISO PARA EJECUTAR ESTA ACCIÓN")
-
-def confirmacion(message):
-	mensaje = message.text
-	respuesta2 = types.ForceReply(selective=False)
-	if mensaje == "SI":
-
-		url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&rows=10&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_65mas_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Sahag%C3%BAn'
-
-
-		respuesta = requests.get(url)
-		open('respuesta.json', 'wb').write(respuesta.content)
-		f = open('respuesta.json')
-		json_file = json.load(f)
-		json_str = json.dumps(json_file)
-		resp = json.loads(json_str)
-
-		fecha_json = resp['records'][0]['fields']['fecha']
-		fecha = datetime.strptime(fecha_json, '%Y-%m-%d')
-		fecha = fecha.strftime('%d-%m-%Y')
-
-		ia14 = 	resp['records'][0]['fields']['ia14_boe']
-		ia14_valoracion = 	resp['records'][0]['fields']['ia14_boe_65mas_valoracion']	
-		ia7 =resp['records'][0]['fields']['ia7_boe']
-		ia7_valoracion = resp['records'][0]['fields']['ia7_boe_65mas_valoracion']
-		casos_7d = resp['records'][0]['fields']['casos_ultima_semana']
-		positividad = resp['records'][0]['fields']['positividad']
-		positividad_valoracion = resp['records'][0]['fields']['positividad_valoracion']
-		trazabilidad = resp['records'][0]['fields']['porc_trazabilidad']
-		trazabilidad_valoracion = resp['records'][0]['fields']['porc_trazabilidad_valoracion']
-
-
-		url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=prevalencia-coronavirus&q=sahagun&sort=fecha&facet=fecha&facet=zbs_geo&facet=provincia'
-
-		respuesta = requests.get(url)
-		open('respuesta.json', 'wb').write(respuesta.content)
-		f = open('respuesta.json')
-		json_file = json.load(f)
-		json_str = json.dumps(json_file)
-		resp = json.loads(json_str)
-
-
-		prevalencia = 	resp['records'][0]['fields']['prevalencia']
-
-
-		url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=tasa-enfermos-acumulados-por-areas-de-salud&q=&sort=fecha&facet=fecha&facet=nombregerencia&facet=zbs_geo&facet=tipo_centro&facet=municipio&facet=centro&refine.centro=C.S.+SAHAGUN+CAMPOS'
-		respuesta = requests.get(url)
-		open('respuesta.json', 'wb').write(respuesta.content)
-		f = open('respuesta.json')
-		json_file = json.load(f)
-		json_str = json.dumps(json_file)
-		resp = json.loads(json_str)
-
-		fecha_zona_json = resp['records'][0]['fields']['fecha']
-		fecha_zona = datetime.strptime(fecha_zona_json, '%Y-%m-%d')
-		fecha_zona = fecha_zona.strftime('%d-%m-%Y')
-
-
-		pcr_realizados = 	resp['records'][0]['fields']['pcr_realizados']
-		pcr_positivos  = 	resp['records'][0]['fields']['pcr_positivos']
-		enfermos_14dias = resp['records'][0]['fields']['totalenfermedad_14dias']
-		enfermos_7dias = resp['records'][0]['fields']['totalenfermedad_7dias']
-
-		mensaje_datos = "📅 Datos correspondientes al dia: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\n\nPCR Realizados el "+fecha_zona+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha_zona+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
-		
-	else:
-		bot.send_message(ADMIN_ID, "Los Datos no han sido enviados")
 
 		
 @bot.message_handler(commands={"datos"})
@@ -135,8 +50,7 @@ def datos(message):
 	casos_7d = resp['records'][0]['fields']['casos_ultima_semana']
 	positividad = resp['records'][0]['fields']['positividad']
 	positividad_valoracion = resp['records'][0]['fields']['positividad_valoracion']
-	trazabilidad = resp['records'][0]['fields']['porc_trazabilidad']
-	trazabilidad_valoracion = resp['records'][0]['fields']['porc_trazabilidad_valoracion']
+
 
 	url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=prevalencia-coronavirus&q=sahagun&sort=fecha&facet=fecha&facet=zbs_geo&facet=provincia'
 
@@ -397,7 +311,7 @@ def datos(message):
 	enfermos_14dias = resp['records'][0]['fields']['totalenfermedad_14dias']
 	enfermos_7dias = resp['records'][0]['fields']['totalenfermedad_7dias']
 
-	mensaje_datos = "📅 Datos correspondientes al dia: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n Trazabilidad : \n👉 "+str(trazabilidad)+"% ("+trazabilidad_valoracion+")\n\n⬇️ Datos Zona Básica de Sahagún\n\nPCR Realizados el "+fecha_zona+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha_zona+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\nPueblos con alta Incidencia\n👉 "+PUEBLOS_INCIDENCIA_ALTA+"\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
+	mensaje_datos = "📅 Datos correspondientes al dia: "+str(fecha)+"\n\n⬇️ Datos del Municipio de Sahagún\n\n Incidencia Acumulada (14 dias)\n👉 "+str(ia14)+" ("+ia14_valoracion+")\n Incidencia Acumulada (7 dias)\n"+"👉 "+str(ia7)+" ("+ia7_valoracion+")\n Positividad: "+"\n👉 "+str(positividad)+" ("+positividad_valoracion+")\n Casos última semana: "+"\n👉 "+str(casos_7d)+"\n\n⬇️ Datos Zona Básica de Sahagún\n\nPCR Realizados el "+fecha_zona+"\n👉 "+str(pcr_realizados)+"\nPCR Positivos el "+fecha_zona+"\n👉 "+str(pcr_positivos)+"\nPersonas enfermas en los últimos 14 dias\n👉 "+str(enfermos_14dias)+"\nPersonas enfermas en los últimos 7 dias\n👉 "+str(enfermos_7dias)+"\nPrevalencia\n👉 "+str(prevalencia)+ "\nPueblos con alta Incidencia\n👉 "+PUEBLOS_INCIDENCIA_ALTA+"\n\nDATOS OBTENIDOS DEL PORTAL DE DATOS ABIERTOS DE LA JUNTA DE CASTILLA Y LEÓN"
 		
 
 	bot.send_message(cid, mensaje_datos)
