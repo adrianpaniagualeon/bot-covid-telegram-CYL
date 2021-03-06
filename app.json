@@ -18,17 +18,12 @@
          "description": "HEROKU APP URL",
          "value": "https://yourappname.herokuapp.com"
     },
-      "PUEBLO":{
+      "URL_PUEBLO":{
          "description":"ID OF YOUR VILLAGE FROM https://analisis.datosabiertos.jcyl.es/explore/dataset/indicadores-de-riesgo-covid-19-por-municipios/table/?disjunctive.provincia",
          "value":"1"
       },
-      "ADMIN_ID":{
-         "description":"YOUR CHAT ID",
-         "value":"1"
-      },
-
-      "GROUP_ID":{
-         "description":"YOUR TELEGRAM GROUP ID",
+      "NOMBRE_PUEBLO":{
+         "description":"DISPLAY NAME",
          "value":"1"
       }
     }

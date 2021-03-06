@@ -10,8 +10,9 @@ TOKEN = os.environ['TOKEN']
 
 WEBHOOK = os.environ['WEBHOOK']
 
-PUEBLO = os.environ['PUEBLO']
+URL_PUEBLO = os.environ['URL_PUEBLO']
 
+NOMBRE_PUEBLO = os.environ['NOMBRE_PUEBLO']
 
 
 bot = telebot.TeleBot(TOKEN)
