@@ -7,11 +7,7 @@ import json
 from datetime import datetime, timedelta
 
 TOKEN = os.environ['TOKEN']
-
-WEBHOOK = os.environ['WEBHOOK']
-
 URL_PUEBLO = os.environ['URL_PUEBLO']
-
 NOMBRE_PUEBLO = os.environ['NOMBRE_PUEBLO']
 
 
@@ -323,18 +319,5 @@ def start(message):
 	cid = message.chat.id
 	bot.send_message(cid, "Hola. ¿Quieres ver los últimos datos del COVID-19 subidos por la Junta de Castilla y León en Sahagún? Solo tienes que hacer click sobre el siguiente comando: /datos y te los enviaré. Los datos les obtengo del portal de datos abiertos de la Junta de Castilla Y León. El bot ha sido programado por Adrián Paniagua.\n\n Puedes ver el proyecto en Github: https://github.com/adrianpaniagualeon/bot-covid-telegram-CYL")
 
-@server.route('/' + TOKEN, methods=['POST'])
-def getMessage():
-    bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
-    return "!", 200
 
-
-@server.route("/")
-def webhook():
-    bot.remove_webhook()
-    bot.set_webhook(url=WEBHOOK+ TOKEN)
-    return "!", 200
-
-
-if __name__ == "__main__":
-    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+bot.infinity_polling()
