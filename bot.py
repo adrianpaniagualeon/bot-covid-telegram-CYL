@@ -7,8 +7,8 @@ import json
 from datetime import datetime, timedelta
 
 TOKEN = os.environ['TOKEN']
-URL_PUEBLO = os.environ['URL_PUEBLO']
-NOMBRE_PUEBLO = os.environ['NOMBRE_PUEBLO']
+URL_PUEBLO =  "Sahag%C3%BAn"
+NOMBRE_PUEBLO = "Sahagún"
 
 
 bot = telebot.TeleBot(TOKEN)
@@ -66,6 +66,7 @@ def datos(message):
 	calzada ='https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&sort=fecha&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Calzada+del+Coto'
 	castrotierra ='https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&sort=fecha&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Castrotierra+de+Valmadrigal'
 	cea = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&sort=fecha&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Cea'
+	elburgo = "https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=el+burgo&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_65mas_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Burgo+Ranero%2C+El"
 	escobar = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&sort=fecha&q=&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Escobar+de+Campos'
 	gordaliza = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Gordaliza+del+Pino'
 	grajal = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=indicadores-de-riesgo-covid-19-por-municipios&q=&sort=fecha&facet=fecha&facet=municipio&facet=provincia&facet=ia14_boe_valoracion&facet=ia7_boe_valoracion&facet=ia14_boe_65mas_valoracion&facet=ia7_boe_valoracion&facet=positividad_valoracion&facet=porc_trazabilidad_valoracion&refine.municipio=Grajal+de+Campos'
@@ -120,7 +121,14 @@ def datos(message):
 
 	cea = resp['records'][0]['fields']['ia7_boe_valoracion']
 
+	respuesta = requests.get(elburgo)
+	open('pueblo.json', 'wb').write(respuesta.content)
+	f = open('pueblo.json')
+	json_file = json.load(f)
+	json_str = json.dumps(json_file)
+	resp = json.loads(json_str)
 
+	elburgo = resp['records'][0]['fields']['ia7_boe_valoracion']
 
 	respuesta = requests.get(escobar)
 	open('pueblo.json', 'wb').write(respuesta.content)
@@ -256,6 +264,9 @@ def datos(message):
 	if cea == "Muy alto":
 		PUEBLOS_INCIDENCIA_ALTA += " Cea"
 
+	if elburgo == "Muy alto":
+		PUEBLOS_INCIDENCIA_ALTA += " El Burgo Ranero"
+
 	if escobar == "Muy alto":
 		PUEBLOS_INCIDENCIA_ALTA += " Escobar de Campos"
 
@@ -289,7 +300,8 @@ def datos(message):
 	if villazanzo == "Muy alto":
 		PUEBLOS_INCIDENCIA_ALTA += " Villazanzo de Valderaduey"
 
-
+	if PUEBLOS_INCIDENCIA_ALTA == "":
+		PUEBLOS_INCIDENCIA_ALTA = "NINGUNO"
 
 	url = 'https://analisis.datosabiertos.jcyl.es/api/records/1.0/search/?dataset=tasa-enfermos-acumulados-por-areas-de-salud&q=&sort=fecha&facet=fecha&facet=nombregerencia&facet=zbs_geo&facet=tipo_centro&facet=municipio&facet=centro&refine.centro=C.S.+SAHAGUN+CAMPOS'
 	respuesta = requests.get(url)
