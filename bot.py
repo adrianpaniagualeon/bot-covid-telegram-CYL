@@ -331,5 +331,29 @@ def start(message):
 	cid = message.chat.id
 	bot.send_message(cid, "Hola. ¿Quieres ver los últimos datos del COVID-19 subidos por la Junta de Castilla y León en Sahagún? Solo tienes que hacer click sobre el siguiente comando: /datos y te los enviaré. Los datos les obtengo del portal de datos abiertos de la Junta de Castilla Y León. El bot ha sido programado por Adrián Paniagua.\n\n Puedes ver el proyecto en Github: https://github.com/adrianpaniagualeon/bot-covid-telegram-CYL")
 
+@bot.message_handler(commands={"vacuna"})
+def vacuna(message):
+	cid = message.chat.id
+	VACUNACION_PUEBLOS = "Próximas vacunaciones masivas en la provincia de León "
+	resp = requests.get("https://www.saludcastillayleon.es/en/covid-19-poblacion/vacunacion-covid/lugares-vacunacion/leon")
+	citas = resp.text.count("/en/covid-19-poblacion/vacunacion-covid/lugares-vacunacion/leon.files/")
+	resp = resp.text.split('<li class="cmResourceType_pdf cmResourceItem cmOneResourceFile firstNode">')[1].split("</div>")[0]
+	lugares = {}
+	archivo = {}
+	for i in range (citas):
+		i = i+1
+		lugares[i] = resp.split('<span class="resourceData2">')[i].split('</span>')[0]
+		lugares[i] = lugares[i].replace("_", " ")
+		lugares[i] = lugares[i].replace("compressed", "")
+		lugares[i] = lugares[i].replace("-0", "")
+
+		archivo[i] = "https://www.saludcastillayleon.es"
+		archivo[i] = archivo[i] + resp.split('href="')[i].split('" class')[0]
+
+		VACUNACION_PUEBLOS = VACUNACION_PUEBLOS + "📍 "+lugares[i]+"\nℹ️ "+archivo[i]+"\n\n"
+        
+
+	bot.send_message(cid, VACUNACION_PUEBLOS)
+
 
 bot.infinity_polling()
