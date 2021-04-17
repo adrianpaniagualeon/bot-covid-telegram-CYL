@@ -1,13 +1,9 @@
 # COVID INFO Telegram BOT (CYL)
 
 ## ¿Qué hace este bot?
-Cuando le envias el comando /datos , el bot recopilará y te devolverá los últimos publicados en el portal de datos abiertos de la Junta de Castilla y León
+Cuando le envias el comando /datos , el bot recopilará y te devolverá los últimos publicados en el portal de datos abiertos de la Junta de Castilla y León.
+Si envias /vacuna , el bot te enviará las proximas fechas de vacunación en la provincia de León
 
-
-## ¿Cómo puedo colaborar?
-Existen dos formas de colaborar:
-- Añadiendo nuevas funcionalidades al bot mediante _pull-request_. 
-- Aportación económica: Puedes aportar tu granito de arena por [Paypal](https://paypal.me/panleoad)
 
 ## ¿Qué significan los datos?
 
@@ -21,3 +17,8 @@ Existen dos formas de colaborar:
 |Prevalencia|Personas que cada día siguen siendo compatibles con COVID-19|
 
 
+## ¿Cómo puedo colaborar?
+Existen tres formas de colaborar:
+- Añadiendo nuevas funcionalidades al bot mediante _pull-request_. 
+- Aportación económica: Puedes aportar tu granito de arena por [Paypal](https://paypal.me/panleoad)
+- Invitarme a un café: Me puedes invitar a un café a través de [Ko-Fi](https://ko-fi.com/adrianpaniagualeon)
