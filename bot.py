@@ -9,7 +9,11 @@ from datetime import datetime, timedelta
 TOKEN = os.environ['TOKEN']
 URL_PUEBLO =  "Sahag%C3%BAn"
 NOMBRE_PUEBLO = "Sahagún"
+URL_MONGO = os.environ['URL']
 
+myclient = pymongo.MongoClient(URL_MONGO)
+mydb = myclient["telegram_bot"]
+db = myclient.test
 
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
@@ -354,6 +358,35 @@ def vacuna(message):
         
 
 	bot.send_message(cid, VACUNACION_PUEBLOS)
+
+
+
+@bot.message_handler(commands={"subscribe"})
+def subscribe(message):
+	chat_id = message.chat.id
+	name = message.from_user.username
+	mycol = db["CHAT_ID"]
+	mydict = { "cid": chat_id, "name": name }
+	myquery = { "cid": chat_id}
+	mydoc = mycol.find(mydict)
+	exist= ""
+	for user in mydoc:
+		exist = user
+	if (exist != ""):
+		bot.send_message(chat_id, "Ya estas suscrito a la lista de difusión de los datos del Coronavirus en Sahagún. Si deseas dejar de recibir los datos, envia /unsubscribe a este bot. En caso de tener algún problema técnico, contacta con @APLEONI")
+	else:
+		x = mycol.insert_one(mydict)
+		bot.send_message(chat_id, "Te has suscrito correctamente a la lista de difusión de los datos del Coronavirus en Sahagún. Para que el bot funcione, es necesario que no borres los mensajes. Si deseas dejar de recibir los datos, envia /unsubscribe a este bot. En caso de tener algún problema técnico, contacta con @APLEONI")
+
+@bot.message_handler(commands={"unsubscribe"})
+def unsubscribe(message):
+	chat_id = message.chat.id
+	mycol = db["CHAT_ID"]
+	myquery = { "cid": chat_id}
+	x = mycol.delete_many(myquery)
+	bot.send_message(chat_id, "Ya NO estas suscrito a la lista de difusión de los datos del Coronavirus en Sahagún. Si deseas volver a recibir los datos, envia /subscribe a este bot. En caso de tener algún problema técnico, contacta con @APLEONI")
+
+
 
 
 bot.infinity_polling()
