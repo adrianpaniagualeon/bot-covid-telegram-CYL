@@ -5,6 +5,7 @@ from flask import Flask, request
 import os
 import json
 from datetime import datetime, timedelta
+import pymongo
 
 TOKEN = os.environ['TOKEN']
 URL_PUEBLO =  "Sahag%C3%BAn"
