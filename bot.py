@@ -341,7 +341,7 @@ def vacuna(message):
 	cid = message.chat.id
 	VACUNACION_PUEBLOS = "Próximas vacunaciones masivas en la provincia de León "
 	resp = requests.get("https://www.saludcastillayleon.es/en/covid-19-poblacion/vacunacion-covid/lugares-vacunacion/leon")
-	citas = resp.text.count("/en/covid-19-poblacion/vacunacion-covid/lugares-vacunacion/leon.files/")
+	citas = resp.text.count("/en/covid-19-poblacion/vacunacion-covid-19/lugares-vacunacion/leon.files/")
 	resp = resp.text.split('<li class="cmResourceType_pdf cmResourceItem cmOneResourceFile firstNode">')[1].split("</div>")[0]
 	lugares = {}
 	archivo = {}
