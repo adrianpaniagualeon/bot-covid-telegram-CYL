@@ -11,6 +11,7 @@ TOKEN = os.environ['TOKEN']
 URL_PUEBLO =  "Sahag%C3%BAn"
 NOMBRE_PUEBLO = "Sahagún"
 URL_MONGO = os.environ['URL']
+BITLY_TOKEN = os.environ['BITLY_TOKEN']
 
 myclient = pymongo.MongoClient(URL_MONGO)
 mydb = myclient["telegram_bot"]
@@ -354,6 +355,22 @@ def vacuna(message):
 
 		archivo[i] = "https://www.saludcastillayleon.es"
 		archivo[i] = archivo[i] + resp.split('href="')[i].split('" class')[0]
+
+
+		headers = {
+		    'Authorization': 'Bearer '+BITLY_TOKEN,
+		    'Content-Type': 'application/json',
+		}
+
+		data = '{ "long_url": "'+archivo[i]+'", "domain": "bit.ly"}'
+
+		acortado = requests.post('https://api-ssl.bitly.com/v4/shorten', headers=headers, data=data)
+		open('link.json', 'w').write(acortado.text)
+		f = open('link.json')
+		json_file = json.load(f)
+		json_str = json.dumps(json_file)
+		resp2 = json.loads(json_str)
+		archivo[i] = resp2 ["id"]
 
 		VACUNACION_PUEBLOS = VACUNACION_PUEBLOS + "📍 "+lugares[i]+"\nℹ️ "+archivo[i]+"\n\n"
         
